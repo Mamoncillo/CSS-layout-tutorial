@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>cssBasics</title>
+        <link rel="stylesheet" href="styles/pimp_my_tag.css" media="screen" title="no title" charset="utf-8">
+        <style media="screen" id="css"
+>/* if you are going to change the CSS of generic tags */
+/* like: <div> or <span> */
+/* Please always use the .demo class to not affect other parts of the document */
+.demo div {
+    position: static;
+    display: block;
+}
+.demo span {
+    position: static;
+    display: inline-block;
+}</style>
+    </head>
+    <body>
+
+        <main>
+            <div class="title">
+                <h1>C1</h1>
+                <hr>
+                <p class="description">display: block vs inline</p>
+            </div>
+
+            <div class="interface-container">
+                <div class="interface">
+                    <div class="toolbar">
+                        <span> css</span>
+                        <span class="active">info</span>
+                    </div>
+                    <div class="editor"></div>
+                    <div class="info active">
+                        <div class="content">
+                            <h2>Display property</h2>
+                            <p>
+                                The <strong>display:</strong> CSS property specifies the type of rendering box used for an element
+                            </p>
+                            <p>
+                                There are two <strong>generic</strong> tags that have block and inline values by default
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Block
+                                        </th>
+                                        <th>
+                                            Inline
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            &lt;div&gt;
+                                        </td>
+                                        <td>
+                                            &lt;span&gt;
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                in addition there are also a bunch of <strong>semantic</strong> tags with this values by default too
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Block
+                                        </th>
+                                        <th>
+                                            Inline
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            &lt;h1&gt;, &lt;h2&gt;
+                                        </td>
+                                        <td>
+                                            &lt;a&gt;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &lt;p&gt;
+                                        </td>
+                                        <td>
+                                            &lt;img&gt;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &lt;ul&gt;, &lt;ol&gt;
+                                        </td>
+                                        <td>
+                                            &lt;input&gt;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &lt;table&gt;
+                                        </td>
+                                        <td>
+                                            &lt;textarea&gt;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &lt;blockquote&gt;
+                                        </td>
+                                        <td>
+                                            &lt;code&gt;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &lt;video&gt;
+                                        </td>
+                                        <td>
+                                            &lt;strong&gt;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            ...
+                                        </td>
+                                        <td>
+                                            ...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                Always try to use the <strong>semantic</strong> tags, but if you think that no one of them makes sense, then use one of the <strong>generic</strong> tags
+                            </p>
+                            <h2>Block</h2>
+                            <p>
+                                in block means that the element will take all the line and will put the other elements below him
+                            </p>
+                            <h2>Inline</h2>
+                            <p>
+                                in line means that the element will take all the line but instead of put the other elements below him, he will share the line with other inline elements
+                            </p>
+                            <blockquote>
+                                <p>
+                                    You can't set width or height of inline elements, but you can use inline-block instead
+                                </p>
+                            </blockquote>
+                            <h2>none</h2>
+                            <p>
+                                The element will be not displayed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo">
+                <div class="big">div</div>
+                <div class="small">div</div>
+                <span class="big">span</span
+                ><span class="small">span</span
+                ><span class="big">span</span
+                ><span class="small">span</span
+                ><div class="small">div</div>
+                <div class="big">div</div>
+                <div class="small">div</div>
+                <div class="big">div</div>
+            </div>
+        </main>
+        <script type="text/javascript" src="js/vendors/ace.js"></script>
+        <script type="text/javascript" src="js/editor.js"></script>
+        <script type="text/javascript" src="js/code.js"></script>
+    </body>
+</html>

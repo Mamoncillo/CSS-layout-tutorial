@@ -1,0 +1,23 @@
+{
+  "name": "CSS-layout-tutorial",
+  "version": "0.0.1",
+  "description": "CSS tutorial based on browsing commits history",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mamoncillo/CSS-layout-tutorial.git"
+  },
+  "author": "Jberivera",
+  "contributors" : [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mamoncillo/CSS-layout-tutorial/issues"
+  },
+  "homepage": "https://github.com/Mamoncillo/CSS-layout-tutorial",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
