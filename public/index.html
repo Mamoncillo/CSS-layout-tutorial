@@ -8,6 +8,20 @@
 >/* if you are going to change the CSS of generic tags */
 /* like: <div> or <span> */
 /* Please always use the .demo class to not affect other parts of the document */
+#relative {
+    position: relative;
+/* remove the code below ('top' and 'left') to see how the element */
+/* gets back to the white space it is supposed to be in */
+    top: -85px;
+    left: 20px;
+}
+#absolute {
+    position: absolute;
+    top:10px;
+}
+#fixed {
+    position: fixed;
+}
 .demo div {
     position: static;
     display: block;
@@ -15,15 +29,16 @@
 .demo span {
     position: static;
     display: inline-block;
-}</style>
+}
+</style>
     </head>
     <body>
 
         <main>
             <div class="title">
-                <h1>C1</h1>
+                <h1>C2</h1>
                 <hr>
-                <p class="description">display: block vs inline</p>
+                <p class="description">position: static vs relative vs absolute</p>
             </div>
 
             <div class="interface-container">
@@ -35,127 +50,35 @@
                     <div class="editor"></div>
                     <div class="info active">
                         <div class="content">
-                            <h2>Display property</h2>
+                            <h2>Position property</h2>
                             <p>
-                                The <strong>display:</strong> CSS property specifies the type of rendering box used for an element
-                            </p>
-                            <p>
-                                There are two <strong>generic</strong> tags that have block and inline values by default
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            Block
-                                        </th>
-                                        <th>
-                                            Inline
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            &lt;div&gt;
-                                        </td>
-                                        <td>
-                                            &lt;span&gt;
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p>
-                                in addition there are also a bunch of <strong>semantic</strong> tags with this values by default too
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            Block
-                                        </th>
-                                        <th>
-                                            Inline
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            &lt;h1&gt;, &lt;h2&gt;
-                                        </td>
-                                        <td>
-                                            &lt;a&gt;
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            &lt;p&gt;
-                                        </td>
-                                        <td>
-                                            &lt;img&gt;
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            &lt;ul&gt;, &lt;ol&gt;
-                                        </td>
-                                        <td>
-                                            &lt;input&gt;
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            &lt;table&gt;
-                                        </td>
-                                        <td>
-                                            &lt;textarea&gt;
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            &lt;blockquote&gt;
-                                        </td>
-                                        <td>
-                                            &lt;code&gt;
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            &lt;video&gt;
-                                        </td>
-                                        <td>
-                                            &lt;strong&gt;
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            ...
-                                        </td>
-                                        <td>
-                                            ...
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p>
-                                Always try to use the <strong>semantic</strong> tags, but if you think that no one of them makes sense, then use one of the <strong>generic</strong> tags
-                            </p>
-                            <h2>Block</h2>
-                            <p>
-                                in block means that the element will take all the line and will put the other elements below him
-                            </p>
-                            <h2>Inline</h2>
-                            <p>
-                                in line means that the element will take all the line but instead of put the other elements below him, he will share the line with other inline elements
+                                The <strong>position:</strong> CSS property specifies the type of positioning method used for an element (static, relative, absolute or fixed).
                             </p>
                             <blockquote>
                                 <p>
-                                    You can't set width or height of inline elements, but you can use inline-block instead
+                                    Look at css tag and follow the instructions for best understanding of the information here
                                 </p>
                             </blockquote>
-                            <h2>none</h2>
+                            <h2>Static</h2>
                             <p>
-                                The element will be not displayed
+                                Static is the default value. Elements render in order as they appear in the html flow, the top, right, bottom, left and z-index properties do not apply.
+                            </p>
+                            <h2>Relative</h2>
+                            <p>
+                                The element is positioned relative to its normal position, in simple words, it is like static, elements render in order as they appear in the html document, but you can move it around using left, right, top and bottom <strong>relative</strong> to its position, it will leave a white space where it is supposed to be in first place.
+                            </p>
+                            <h2>Absolute</h2>
+                            <p>
+                                The element is positioned relative to its first positioned (not static) ancestor element, it will not leave white space for the element
+                            </p>
+                            <blockquote>
+                                <p>
+                                    If you want to have more control over <strong>absolute</strong> elements position, put them inside a non static element
+                                </p>
+                            </blockquote>
+                            <h2>Fixed</h2>
+                            <p>
+                                Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled.
                             </p>
                         </div>
                     </div>
@@ -166,12 +89,12 @@
                 <div class="big">div</div>
                 <div class="small">div</div>
                 <span class="big">span</span
-                ><span class="small">span</span
+                ><span id="relative" class="small">span</span
                 ><span class="big">span</span
-                ><span class="small">span</span
+                ><span id="fixed" class="small">span</span
                 ><div class="small">div</div>
                 <div class="big">div</div>
-                <div class="small">div</div>
+                <div id="absolute" class="small">div</div>
                 <div class="big">div</div>
             </div>
         </main>

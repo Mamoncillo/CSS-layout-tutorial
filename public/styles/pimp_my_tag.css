@@ -41,22 +41,57 @@ code {
     background-color: #D96459;
 }
 
-div.big::after, div.small::after {
-    content: "<-- display: block";
-    white-space: nowrap;
+#absolute::after {
+    content: "I'm absolute, I don't leave white space\A and I was supposed to be down there\A in the middle of the last two divs\A but who cares I'm absolute";
     position: relative;
+    white-space: pre;
+    top: 10px;
     color: #333;
-    left: 85%;
-    top: 37%;
+    left: 100px;
+    padding: 0 2px;
 }
 
-span.small:last-of-type::after {
-    content: "<-- display: inline-block";
-    white-space: nowrap;
+#absolute::before {
+    content: "";
+    position: absolute;
+    left: 75px;
+    top: 18px;
+    height: 2px;
+    width: 45px;
+    background-color: #000;
+}
+
+#relative::after {
+    content: "I'm relative, I leave a white space";
     position: relative;
+    white-space: nowrap;
     color: #333;
-    left: 60%;
-    top: 37%;
+    top: -32px;
+    padding: 0 2px;
+    border: 1px solid #000;
+}
+
+#fixed::after {
+    content: "I'm fixed, come on scroll it";
+    position: relative;
+    white-space: nowrap;
+    color: #333;
+    top: -32px;
+    padding: 0 2px;
+    border: 1px solid #000;
+}
+
+#fixed::before, #relative::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    top: -7.5px;
+    left: 73px;
+    background-color: #333;
+    transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg); /* IE 9 */
+    -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
 }
 
 .interface-container {
@@ -72,29 +107,18 @@ span.small:last-of-type::after {
     width: 100%;
 }
 
-/* <span>css<span> */
-.toolbar span:nth-child(1).active::before {
-    position: relative;
-    content: "";
-    top: -5px;
-    width: 30px;
-    height: 2px;
+/* <span>css<span> <span>info<span> */
+.toolbar span.active::before {
     position: absolute;
-    background-color: #F33FAC;
-}
-
-/* <span>info<span> */
-.toolbar span:nth-child(2).active::before {
-    position: relative;
     content: "";
-    top: -5px;
-    width: 40px;
+    top: -3px;
+    width: 80%;
     height: 2px;
-    position: absolute;
     background-color: #F33FAC;
 }
 
 .toolbar span {
+    position: relative;
     text-align: center;
     padding: 5px;
     margin-left: 10px;
